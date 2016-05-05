@@ -1,0 +1,20 @@
+package com.scaietii.PaymentSystem;
+
+import javax.persistence.Entity;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+/**
+ * Hello world!
+ *
+ */
+
+public class App 
+{
+	private static final String PERSISTENCE_UNIT_NAME = "TemaJava";
+	  private static EntityManagerFactory factory;
+    public static void main( String[] args )
+    {
+    	System.out.println(Persistence.createEntityManagerFactory("EclipseLink-Installation").isOpen());
+    }
+}

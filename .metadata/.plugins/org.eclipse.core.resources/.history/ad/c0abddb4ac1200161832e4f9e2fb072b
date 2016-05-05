@@ -1,0 +1,24 @@
+package com.scaietii.PaymentSystem.entities;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+public class Contract {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private Provider provider;
+	private Client client;
+	private Service service;
+	private Boolean automaticPayment;
+	
+	
+	public Provider getProvider() {
+		return provider;
+	}
+	public void setProvider(Provider provider) {
+		this.provider = provider;
+	}
+}

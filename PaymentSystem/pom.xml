@@ -10,33 +10,45 @@
   <name>PaymentSystem</name>
   <url>http://maven.apache.org</url>
 
+<repositories>
+   <repository>
+     <id>oss.sonatype.org</id>
+     <name>OSS Sonatype Staging</name>
+     <url>https://oss.sonatype.org/content/groups/staging</url>
+  </repository>
+</repositories>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-
+<dependencies>
 <dependency>
-  <groupId>javax.persistence</groupId>
-  <artifactId>persistence-api</artifactId>
-  <version>1.0.2</version>
-</dependency>
-<dependency>
-  <groupId>org.hibernate</groupId>
-  <artifactId>hibernate-entitymanager</artifactId>
-  <version>4.3.6.Final</version>
-  <exclusions>
-    <exclusion>
-      <groupId>org.hibernate.javax.persistence</groupId>
-      <artifactId>hibernate-jpa-2.1-api</artifactId>
+   <groupId>org.eclipse.persistence</groupId>
+   <artifactId>eclipselink</artifactId>
+   <version>2.5.0-RC1</version>
+    <exclusions>
+      <exclusion>
+      <groupId>org.eclipse.persistence</groupId>
+      <artifactId>commonj.sdo</artifactId>
     </exclusion>
   </exclusions>
 </dependency>
-  </dependencies>
+
+<dependency>
+	<groupId>mysql</groupId>
+	<artifactId>mysql-connector-java</artifactId>
+	<version>5.1.6</version>
+</dependency>
+
+<dependency>
+	<groupId>junit</groupId>
+	<artifactId>junit</artifactId>
+	<version>4.8.1</version>
+</dependency>
+
+
+</dependencies>
+
+
 </project>

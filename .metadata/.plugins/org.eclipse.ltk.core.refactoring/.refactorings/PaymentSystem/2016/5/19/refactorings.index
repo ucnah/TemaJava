@@ -1,0 +1,24 @@
+1462435478075	Delete element
+1462435495071	Delete element
+1462435520274	Delete element
+1462435723304	Delete element
+1462435746221	Delete element
+1462436041523	Rename package 'com.scaietii.PaymentSystem'
+1462436090993	Move compilation unit
+1462436172918	Delete element
+1462440205527	Encapsulate field 'username'
+1462440210104	Encapsulate field 'password'
+1462441291504	Encapsulate field 'name'
+1462441881573	Encapsulate field 'name'
+1462441887378	Encapsulate field 'description'
+1462441892893	Encapsulate field 'feeForIdebted'
+1462443508410	Encapsulate field 'price'
+1462443514743	Encapsulate field 'client'
+1462443518190	Encapsulate field 'service'
+1462443522637	Encapsulate field 'payDay'
+1462443535851	Encapsulate field 'provider'
+1462444245141	Encapsulate field 'provider'
+1462444365955	Encapsulate field 'client'
+1462444370057	Encapsulate field 'automaticPayment'
+1462444373514	Encapsulate field 'service'
+1462444399087	Encapsulate field 'billsNotPayed'

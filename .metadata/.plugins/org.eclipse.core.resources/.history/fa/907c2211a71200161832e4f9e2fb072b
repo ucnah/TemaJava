@@ -1,0 +1,12 @@
+package com.scaietii.PaymentSystem.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
+@Entity
+public class Service {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+}

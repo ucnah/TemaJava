@@ -1,0 +1,6 @@
+package com.scaietii.PaymentSystem;
+
+@Entity
+public class Client {
+
+}
