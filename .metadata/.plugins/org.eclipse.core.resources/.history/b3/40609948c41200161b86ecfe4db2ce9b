@@ -1,0 +1,5 @@
+package com.scaietii.PaymentSystem.actions;
+
+public class ClientActions {
+
+}

@@ -1,0 +1,9 @@
+package com.scaietii.PaymentSystem;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Client 
+{
+
+}

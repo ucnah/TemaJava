@@ -1,0 +1,88 @@
+package com.scaietii.PaymentSystem.Server;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class ClientApp
+{
+	private static final String PERSISTENCE_UNIT_NAME = "TemaJava";
+	  private static EntityManagerFactory factory;
+	
+	private void connectToDd() throws ClassNotFoundException, SQLException
+	{
+		factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+        EntityManager em = factory.createEntityManager();
+		if(conn != null)
+		{
+			System.out.println("Connected to DB");
+			connected = true;
+		}
+		else
+		{
+			System.out.println("Could not connec to DB");
+			connected = false;
+		}
+	}
+	
+	public String getClientNameById(int id) throws SQLException, ClassNotFoundException
+	{
+		String name = "Client with id " + id + " doesn't exist !";
+		
+		Statement s = null;
+		
+		// conectare la baza de date
+		connectToDd();
+		
+		if (connected)
+		{
+			// statement pentru a putea executa query-uri pe baza de date
+			s = conn.createStatement();
+			
+			//pentru stocarea rezultatelor query-urilor
+			ResultSet rs;
+
+			//verificare daca fisierul a mai fost incarcat
+			rs = s.executeQuery("select nameuser from user_table where iduser = " + id);
+			
+			while(rs.next())
+			{
+				name = rs.getString("nameuser");
+				System.out.println("Result sent to client");
+			}
+		}
+		
+		System.out.println("Disconnected from DB");
+		return name;
+	}
+	
+	public String addClient(int id, String name) throws SQLException, ClassNotFoundException
+	{
+		String result = "Not Ok";
+		
+		Statement s = null;
+		
+		// conectare la baza de date
+		connectToDd();
+		
+		if (connected)
+		{
+			// statement pentru a putea executa query-uri pe baza de date
+			s = conn.createStatement();
+			
+			s.executeUpdate("insert into user_table(iduser, nameuser) values(" + id + ", '" + name + "')");
+			
+			System.out.println("User added to Db");
+			result = "User added to Db";
+		}
+		
+		System.out.println("Disconnected from DB");
+		return result;
+	}
+}

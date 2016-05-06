@@ -1,0 +1,20 @@
+package com.scaietii.PaymentSystem.actions;
+
+import com.scaietii.PaymentSystem.entities.Client;
+
+public class ClientDAO {
+	
+	public void createClient()
+	{
+		em.getTransaction().begin();
+	    Client todo = new Client();
+	    todo.setSummary("This is a test");
+	    todo.setDescription("This is a test");
+	    em.persist(todo);
+	    em.getTransaction().commit();
+
+	    em.close();
+		
+	}
+
+}

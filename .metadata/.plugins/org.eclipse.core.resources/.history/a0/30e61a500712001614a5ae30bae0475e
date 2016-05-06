@@ -1,0 +1,53 @@
+package com.scaietii.PaymentSystem;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Client 
+{
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int idClient;
+	private String name;
+	private String usernameClient;
+	private String passwordClient;
+	private int deposit;
+	
+	public int getIdClient(){
+		return idClient;
+	}
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getUsernameClient() {
+		return usernameClient;
+	}
+	
+	public void setUsernameClient(String usernameClient) {
+		this.usernameClient = usernameClient;
+	}
+	
+	public String getPasswordClient() {
+		return passwordClient;
+	}
+	
+	public void setPasswordClient(String passwordClient) {
+		this.passwordClient = passwordClient;
+	}
+	
+	public int getDeposit() {
+		return deposit;
+	}
+	
+	public void setDeposit(int deposit) {
+		this.deposit = deposit;
+	}
+}
